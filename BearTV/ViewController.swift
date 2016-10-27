@@ -62,6 +62,8 @@ class ViewController: UIViewController {
                 avPlayerLayer?.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
                 self.view.layer.addSublayer(avPlayerLayer!)
                 avPlayer.play()
+                addWatermark()
+
             }
         }
     }
@@ -83,7 +85,27 @@ class ViewController: UIViewController {
         avPlayerLayer?.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
         self.view.layer.addSublayer(avPlayerLayer!)
         avPlayer.play()
+        addWatermark()
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+    }
+    
+    func addWatermark() {
+        let logoLayer = CALayer()
+        logoLayer.contents = UIImage(named: "bear")?.cgImage
+        logoLayer.frame = CGRect(x: 35, y: 950, width: 100, height: 100)
+        logoLayer.opacity = 0.95
+        self.view.layer.addSublayer(logoLayer)
+        
+        let titleLayer = CATextLayer()
+        
+        titleLayer.string = "TV";
+        titleLayer.font = UIFont.boldSystemFont(ofSize: 180).fontName as CFTypeRef?
+        titleLayer.fontSize = 80
+        titleLayer.foregroundColor = UIColor.black.cgColor
+        titleLayer.shadowOpacity = 0.5
+        titleLayer.alignmentMode = kCAAlignmentCenter;
+        titleLayer.frame = CGRect(x: 140, y: 950, width: 100, height: 100)
+        self.view.layer.addSublayer(titleLayer)
     }
  
     func playLiveBear() {
@@ -105,6 +127,7 @@ class ViewController: UIViewController {
         avPlayerLayer?.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
         self.view.layer.addSublayer(avPlayerLayer!)
         avPlayer.play()
+        addWatermark()
     }
     
     func selectBears(gesture: UITapGestureRecognizer) {
