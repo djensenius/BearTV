@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DFA89E391DC23F3300DA41CC /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA89E381DC23F3300DA41CC /* HCYoutubeParser.m */; };
 		DFF228111DBFF92D00052BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF228101DBFF92D00052BD6 /* AppDelegate.swift */; };
 		DFF228131DBFF92D00052BD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF228121DBFF92D00052BD6 /* ViewController.swift */; };
 		DFF228161DBFF92D00052BD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF228141DBFF92D00052BD6 /* Main.storyboard */; };
@@ -33,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DFA89E361DC23F3300DA41CC /* BearTV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BearTV-Bridging-Header.h"; sourceTree = "<group>"; };
+		DFA89E371DC23F3300DA41CC /* HCYoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCYoutubeParser.h; sourceTree = "<group>"; };
+		DFA89E381DC23F3300DA41CC /* HCYoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCYoutubeParser.m; sourceTree = "<group>"; };
 		DFF2280D1DBFF92D00052BD6 /* BearTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BearTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF228101DBFF92D00052BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFF228121DBFF92D00052BD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,9 +101,12 @@
 			children = (
 				DFF228101DBFF92D00052BD6 /* AppDelegate.swift */,
 				DFF228121DBFF92D00052BD6 /* ViewController.swift */,
+				DFA89E371DC23F3300DA41CC /* HCYoutubeParser.h */,
+				DFA89E381DC23F3300DA41CC /* HCYoutubeParser.m */,
 				DFF228141DBFF92D00052BD6 /* Main.storyboard */,
 				DFF228171DBFF92D00052BD6 /* Assets.xcassets */,
 				DFF228191DBFF92D00052BD6 /* Info.plist */,
+				DFA89E361DC23F3300DA41CC /* BearTV-Bridging-Header.h */,
 			);
 			path = BearTV;
 			sourceTree = "<group>";
@@ -258,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFF228131DBFF92D00052BD6 /* ViewController.swift in Sources */,
+				DFA89E391DC23F3300DA41CC /* HCYoutubeParser.m in Sources */,
 				DFF228111DBFF92D00052BD6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,7 +415,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.davidjensenius.BearTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BearTV/BearTV-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -424,7 +432,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.davidjensenius.BearTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BearTV/BearTV-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -502,6 +510,7 @@
 				DFF228341DBFF92D00052BD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFF228351DBFF92D00052BD6 /* Build configuration list for PBXNativeTarget "BearTVTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +519,7 @@
 				DFF228371DBFF92D00052BD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFF228381DBFF92D00052BD6 /* Build configuration list for PBXNativeTarget "BearTVUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +528,7 @@
 				DFF2283A1DBFF92D00052BD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
