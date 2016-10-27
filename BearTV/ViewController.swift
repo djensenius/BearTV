@@ -52,8 +52,8 @@ class ViewController: UIViewController {
             print("Live is \(liveVideo["live"]!) liveStream is \(liveStream)")
             if (liveVideo["live"]! as! String != liveStream) {
                 print("GOTTA REDO")
-                avPlayer.pause()
-                avPlayerLayer!.removeFromSuperlayer()
+                //avPlayer.pause()
+                //avPlayerLayer!.removeFromSuperlayer()
                 liveStream = liveVideo["live"] as! String
                 asset = AVAsset(url: NSURL(string: liveStream)! as URL)
                 let avPlayerItem = AVPlayerItem(asset:asset!)
@@ -87,7 +87,10 @@ class ViewController: UIViewController {
     }
  
     func playLiveBear() {
-        checkLiveStreamTimer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(checkLiveStream), userInfo: nil, repeats: true)
+        if avPlayerLayer != nil {
+            avPlayerLayer!.removeFromSuperlayer()
+        }
+        checkLiveStreamTimer = Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(checkLiveStream), userInfo: nil, repeats: true)
 
         playingLive = true
         NotificationCenter.default.removeObserver(self)
