@@ -90,14 +90,19 @@ class ViewController: UIViewController {
     }
     
     func addWatermark() {
+        let backgroundLayer = CALayer()
+        backgroundLayer.frame = CGRect(x: 0, y: 950, width: 270, height: 100)
+        backgroundLayer.backgroundColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.8).cgColor
+        self.view.layer.addSublayer(backgroundLayer)
+        
         let logoLayer = CALayer()
         logoLayer.contents = UIImage(named: "bear")?.cgImage
         logoLayer.frame = CGRect(x: 35, y: 950, width: 100, height: 100)
         logoLayer.opacity = 0.95
         self.view.layer.addSublayer(logoLayer)
         
-        let titleLayer = CATextLayer()
         
+        let titleLayer = CATextLayer()
         titleLayer.string = "TV";
         titleLayer.font = UIFont.boldSystemFont(ofSize: 180).fontName as CFTypeRef?
         titleLayer.fontSize = 80
@@ -105,6 +110,7 @@ class ViewController: UIViewController {
         titleLayer.shadowOpacity = 0.5
         titleLayer.alignmentMode = kCAAlignmentCenter;
         titleLayer.frame = CGRect(x: 140, y: 950, width: 100, height: 100)
+
         self.view.layer.addSublayer(titleLayer)
     }
  
