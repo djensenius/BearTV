@@ -34,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		631D0AB81DE0F1B300DA9BFC /* BearTV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BearTV.entitlements; sourceTree = "<group>"; };
 		DFA89E361DC23F3300DA41CC /* BearTV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BearTV-Bridging-Header.h"; sourceTree = "<group>"; };
 		DFA89E371DC23F3300DA41CC /* HCYoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCYoutubeParser.h; sourceTree = "<group>"; };
 		DFA89E381DC23F3300DA41CC /* HCYoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCYoutubeParser.m; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		DFF2280F1DBFF92D00052BD6 /* BearTV */ = {
 			isa = PBXGroup;
 			children = (
+				631D0AB81DE0F1B300DA9BFC /* BearTV.entitlements */,
 				DFF228101DBFF92D00052BD6 /* AppDelegate.swift */,
 				DFF228121DBFF92D00052BD6 /* ViewController.swift */,
 				DFA89E371DC23F3300DA41CC /* HCYoutubeParser.h */,
@@ -199,7 +201,12 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 9JALHNGRBQ;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					DFF2281D1DBFF92D00052BD6 = {
 						CreatedOnToolsVersion = 8.0;
@@ -412,11 +419,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 9JALHNGRBQ;
 				INFOPLIST_FILE = BearTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.davidjensenius.BearTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0b653846-a85c-4d42-be93-c0abe1596425";
+				PROVISIONING_PROFILE_SPECIFIER = "XC tvOS: org.davidjensenius.BearTV";
 				SWIFT_OBJC_BRIDGING_HEADER = "BearTV/BearTV-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -429,11 +440,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 9JALHNGRBQ;
 				INFOPLIST_FILE = BearTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.davidjensenius.BearTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0b653846-a85c-4d42-be93-c0abe1596425";
+				PROVISIONING_PROFILE_SPECIFIER = "XC tvOS: org.davidjensenius.BearTV";
 				SWIFT_OBJC_BRIDGING_HEADER = "BearTV/BearTV-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
