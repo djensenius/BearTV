@@ -36,7 +36,14 @@ class ViewController: UIViewController {
          "QoQ_dHCi-08",
          "RuV3YMEhAB8",
          "77dtqOOaGLo",
-         "4aRdwYdSXd8"]
+         "4aRdwYdSXd8",
+         "VDYtgehcfE4",
+         "k5AwcMWb1Ns",
+         "_DEatq2MwUY",
+         "H0z_39syrSk",
+         "Tgm2zQpETSE",
+         "SoGhQ1XvRhg"
+        ]
  
         
         playLiveBear()
