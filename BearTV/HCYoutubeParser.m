@@ -50,28 +50,28 @@
 }
 
 - (NSMutableDictionary *)dictionaryFromQueryStringComponents {
-
+    
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-
+    
     for (NSString *keyValue in [self componentsSeparatedByString:@"&"]) {
         NSArray *keyValueArray = [keyValue componentsSeparatedByString:@"="];
         if ([keyValueArray count] < 2) {
             continue;
         }
-
+        
         NSString *key = [[keyValueArray objectAtIndex:0] stringByDecodingURLFormat];
         NSString *value = [[keyValueArray objectAtIndex:1] stringByDecodingURLFormat];
-
+        
         NSMutableArray *results = [parameters objectForKey:key];
-
+        
         if(!results) {
             results = [NSMutableArray arrayWithCapacity:1];
             [parameters setObject:results forKey:key];
         }
-
+        
         [results addObject:value];
     }
-
+    
     return parameters;
 }
 
@@ -154,6 +154,7 @@
                         }
                         
                         // add some extra information about this video to the dictionary we pass back to save on the amounts of network requests
+                        /*
                         if (videoDictionary.count > 0)
                         {
                             NSMutableDictionary *optionsDict = [NSMutableDictionary dictionary];
@@ -173,6 +174,7 @@
                             
                             [videoDictionary setObject:optionsDict forKey:@"moreInfo"];
                         }
+                         */
                         
                         data = videoDictionary;
                     }
@@ -198,7 +200,7 @@
 }
 
 + (void)h264videosWithYoutubeURL:(NSURL *)youtubeURL
-                   completeBlock:(void(^)(NSDictionary *videoDictionary, NSError *error))completeBlock {
+                   completeBlock:(void(^)(NSDictionary * _Nullable videoDictionary, NSError * _Nullable error))completeBlock {
     NSString *youtubeID = [self youtubeIDFromYoutubeURL:youtubeURL];
     if (youtubeID) {
         dispatch_queue_t queue = dispatch_queue_create("me.hiddencode.yt.backgroundqueue", 0);
@@ -224,7 +226,7 @@
 + (NSURL *)thumbnailUrlForYoutubeURL:(NSURL *)youtubeURL
                        thumbnailSize:(YouTubeThumbnail)thumbnailSize{
     NSURL *url = nil;
-
+    
     if(youtubeURL){
         NSString *thumbnailSizeString = nil;
         switch (thumbnailSize) {
@@ -247,7 +249,7 @@
         NSString *youtubeID = [self youtubeIDFromYoutubeURL:youtubeURL];
         url = [NSURL URLWithString:[NSString stringWithFormat:kYoutubeThumbnailURL, youtubeID, thumbnailSizeString]];
     }
-
+    
     return  url;
 }
 
@@ -271,12 +273,12 @@
                 thumbnailSizeString = @"default";
                 break;
         }
-
+        
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:kYoutubeThumbnailURL, youtubeID, thumbnailSizeString]];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [request setValue:kUserAgent forHTTPHeaderField:@"User-Agent"];
         [request setHTTPMethod:@"GET"];
-
+        
         [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
             if (!error) {
@@ -301,7 +303,7 @@
     if (youtubeID)
     {
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:kYoutubeDataURL, youtubeID]]];
-
+        
         [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (!error) {
                 NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
