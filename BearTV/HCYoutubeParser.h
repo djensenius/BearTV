@@ -12,10 +12,10 @@
 //  distribute, sublicense, and/or sell copies of the Software, and to
 //  permit persons to whom the Software is furnished to do so, subject to
 //  the following conditions:
-//  
+//
 //  The above copyright notice and this permission notice shall be
 //  included in all copies or substantial portions of the Software.
-//  
+//
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 //  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 //  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -53,7 +53,7 @@ typedef enum {
  @param youtubeURL the the complete youtube video url, either youtu.be or youtube.com
  @return string with desired youtube id
  */
-+ (NSString *)youtubeIDFromYoutubeURL:(NSURL *)youtubeURL;
++ (nullable NSString *)youtubeIDFromYoutubeURL:(nullable NSURL *)youtubeURL;
 
 /**
  Method for retreiving a iOS supported video link
@@ -62,7 +62,7 @@ typedef enum {
  @return dictionary with the available formats for the selected video
  
  */
-+ (NSDictionary *)h264videosWithYoutubeURL:(NSURL *)youtubeURL;
++ (nullable NSDictionary *)h264videosWithYoutubeURL:(nullable NSURL *)youtubeURL;
 
 /**
  Method for retreiving an iOS supported video link
@@ -71,7 +71,7 @@ typedef enum {
  @return dictionary with the available formats for the selected video
  
  */
-+ (NSDictionary *)h264videosWithYoutubeID:(NSString *)youtubeID;
++ (nullable NSDictionary *)h264videosWithYoutubeID:(nullable NSString *)youtubeID;
 
 /**
  Block based method for retreiving a iOS supported video link
@@ -80,8 +80,8 @@ typedef enum {
  @param completeBlock the block which is called on completion
  
  */
-+ (void)h264videosWithYoutubeURL:(NSURL *)youtubeURL
-                   completeBlock:(void(^)(NSDictionary *videoDictionary, NSError *error))completeBlock;
++ (void)h264videosWithYoutubeURL:(nullable NSURL *)youtubeURL
+                   completeBlock:(nonnull void(^)( NSDictionary * _Nullable videoDictionary, NSError * _Nullable error))completeBlock;
 
 /**
  Method for retreiving a thumbnail url for wanted youtube id
@@ -89,8 +89,8 @@ typedef enum {
  @param youtubeURL the complete youtube video id
  @param thumbnailSize the wanted size of the thumbnail
  */
-+ (NSURL *)thumbnailUrlForYoutubeURL:(NSURL *)youtubeURL
-                         thumbnailSize:(YouTubeThumbnail)thumbnailSize;
++ (nullable NSURL *)thumbnailUrlForYoutubeURL:(nullable NSURL *)youtubeURL
+                                thumbnailSize:(YouTubeThumbnail)thumbnailSize;
 
 /**
  Method for retreiving a thumbnail for wanted youtube url
@@ -99,9 +99,9 @@ typedef enum {
  @param thumbnailSize the wanted size of the thumbnail
  @param completeBlock the block which is called on completion
  */
-+ (void)thumbnailForYoutubeURL:(NSURL *)youtubeURL
-				 thumbnailSize:(YouTubeThumbnail)thumbnailSize
-				 completeBlock:(void(^)(HCImage *image, NSError *error))completeBlock;
++ (void)thumbnailForYoutubeURL:(nullable NSURL *)youtubeURL
+                 thumbnailSize:(YouTubeThumbnail)thumbnailSize
+                 completeBlock:(nonnull void(^)(HCImage * _Nullable image, NSError * _Nullable error))completeBlock;
 
 /**
  Method for retreiving a thumbnail for wanted youtube id
@@ -110,9 +110,9 @@ typedef enum {
  @param thumbnailSize the wanted size of the thumbnail
  @param completeBlock the block which is called on completion
  */
-+ (void)thumbnailForYoutubeID:(NSString *)youtubeID
-				thumbnailSize:(YouTubeThumbnail)thumbnailSize
-				completeBlock:(void(^)(HCImage *image, NSError *error))completeBlock;
++ (void)thumbnailForYoutubeID:(nullable NSString *)youtubeID
+                thumbnailSize:(YouTubeThumbnail)thumbnailSize
+                completeBlock:(nonnull void(^)(HCImage * _Nullable image, NSError * _Nullable error))completeBlock;
 
 
 /**
@@ -122,6 +122,6 @@ typedef enum {
  @param completeBlock the block which is called on completion
  
  */
-+ (void)detailsForYouTubeURL:(NSURL *)youtubeURL
-               completeBlock:(void(^)(NSDictionary *details, NSError *error))completeBlock;
++ (void)detailsForYouTubeURL:(nullable NSURL *)youtubeURL
+               completeBlock:(nonnull void(^)(NSDictionary * _Nullable details, NSError * _Nullable error))completeBlock;
 @end
