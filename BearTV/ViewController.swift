@@ -42,7 +42,9 @@ class ViewController: UIViewController {
          "_DEatq2MwUY",
          "H0z_39syrSk",
          "Tgm2zQpETSE",
-         "SoGhQ1XvRhg"
+         "SoGhQ1XvRhg",
+         "TnlMvollAkY",
+         "XyTNTC8_w3Y"
         ]
  
         
@@ -58,7 +60,7 @@ class ViewController: UIViewController {
     func checkLiveStream() {
         print("Checking live stream")
         if playingLive == true {
-            let liveVideo : NSDictionary = HCYoutubeParser.h264videos(withYoutubeID: liveStreamID) as NSDictionary
+            let liveVideo : NSDictionary = HCYoutubeParser.h264videos(withYoutubeID: liveStreamID)! as NSDictionary
             print("Live is \(liveVideo["live"]!) liveStream is \(liveStream)")
             if (liveVideo["live"]! as! String != liveStream) {
                 print("GOTTA REDO")
@@ -85,7 +87,7 @@ class ViewController: UIViewController {
     
         avPlayer.pause()
         avPlayerLayer!.removeFromSuperlayer()
-        let liveVideo : NSDictionary = HCYoutubeParser.h264videos(withYoutubeID: notLiveBears?[randomIndex] as! String) as NSDictionary
+        let liveVideo : NSDictionary = HCYoutubeParser.h264videos(withYoutubeID: notLiveBears?[randomIndex] as? String)! as NSDictionary
         let stream = liveVideo["medium"] as! String
         asset = AVAsset(url: NSURL(string: stream)! as URL)
  
@@ -132,7 +134,7 @@ class ViewController: UIViewController {
 
         playingLive = true
         NotificationCenter.default.removeObserver(self)
-        let liveVideo : NSDictionary = HCYoutubeParser.h264videos(withYoutubeID: liveStreamID) as NSDictionary
+        let liveVideo : NSDictionary = HCYoutubeParser.h264videos(withYoutubeID: liveStreamID)! as NSDictionary
         
         liveStream = liveVideo["live"] as! String
         asset = AVAsset(url: NSURL(string: liveStream)! as URL)
