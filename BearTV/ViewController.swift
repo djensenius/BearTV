@@ -25,26 +25,31 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         notLiveBears = [
-         "FL9YYKDMZO0",
          "lD63JOjqTDg",
-         "W9ki8XT2UNA",
          "5ITc3Uclb40",
          "ltvxKi9rEkI",
          "4dXxojR818w",
          "4ZkuN7QPN-U",
          "M0-EeDD6Sa4",
-         "QoQ_dHCi-08",
          "RuV3YMEhAB8",
          "77dtqOOaGLo",
          "4aRdwYdSXd8",
-         "VDYtgehcfE4",
          "k5AwcMWb1Ns",
          "_DEatq2MwUY",
          "H0z_39syrSk",
          "Tgm2zQpETSE",
          "SoGhQ1XvRhg",
          "TnlMvollAkY",
-         "XyTNTC8_w3Y"
+         "XyTNTC8_w3Y",
+         "z2oAaSFfOVo",
+         "9HfbSxkji_w",
+         "RI_f0buRi2c",
+         "-H5PhdpOKhY",
+         "yTw7qps1WG8",
+         "8CnFo7qinng",
+         "2tFWOje0Pc0",
+         "uWA7GtDmNFU",
+         "9nSWc43TLaI"
         ]
  
         
